@@ -79,8 +79,9 @@ function game(){
     let playerChoice;
     for(let z=0;z<5;z++){
         computerChoice=getComputerChoice();
-        playerChoice=prompt("What's your choice?");    
-        singleRound(playerChoice,computerChoice);
+        playerChoice=prompt("What's your choice?");
+        let result= playerChoice.toLowerCase();    
+        singleRound(result,computerChoice);
     }
  
 }
