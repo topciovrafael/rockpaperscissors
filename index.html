@@ -6,8 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+        <div class="txt1">Rock Paper Scissors!</div><div class="d2">
+            <button class="btn" onClick="choose('rock')"><img src="rock.png"></button>
+            <button class="btn" onClick="choose('paper')"><img src="paper.png"></button>
+            <button class="btn" onClick="choose('scissors')"><img src="scissors.png"></button>
+        </div>
+        <div class="d3">
+            <div class="txt" id="alegere">Here you will see what the computer chose!</div>
+            <div class="txt" id="mesaj">Press one of the buttons above to start!</div>
+            <div class="score" id="score">YOU  0 - 0  BOT</div>
+            <div class="txt" id="final"></div>
+            <div class="txt" id="final2"></div>
+        </div>
 </body>
 </html>

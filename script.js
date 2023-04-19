@@ -24,15 +24,21 @@ function singleRound(choice1,choice2){
     {
         if(choice2=='rock')
         {
-            alert("It's a tie!");
+            document.getElementById("alegere").innerHTML = "Computer chose rock!";
+            document.getElementById("mesaj").innerHTML = "It's a tie!";
+            console.log("It's a tie!");
         }
         else if(choice2=='paper')
         {
-            alert('You lost! Paper beats rock!');
+            document.getElementById("alegere").innerHTML = "Computer chose paper!";
+            document.getElementById("mesaj").innerHTML = 'You lost! Paper beats rock!';
+            console.log('You lost! Paper beats rock!');
             j++;
         }
         else {
-            alert("You win! Rock beats scissors!");
+            document.getElementById("alegere").innerHTML = "Computer chose scissors!";
+            document.getElementById("mesaj").innerHTML = 'You win! Rock beats scissors!';
+            console.log("You win! Rock beats scissors!");
             i++;
         }
     }
@@ -40,16 +46,22 @@ function singleRound(choice1,choice2){
     {
         if(choice2=='paper')
         {
-            alert("It's a tie!");
+            document.getElementById("alegere").innerHTML = "Computer chose paper!";
+            document.getElementById("mesaj").innerHTML = "It's a tie!";
+            console.log("It's a tie!");
         }
         else if(choice2=='scissors')
         {
-            alert('You lost! Scissors beats paper!');
+            document.getElementById("alegere").innerHTML = "Computer chose scissors!";
+            document.getElementById("mesaj").innerHTML = 'You lost! Scissors beats paper!';
+            console.log('You lost! Scissors beats paper!');
             j++;
             
         }
         else {
-            alert("You win! Paper beats rock!");
+            document.getElementById("alegere").innerHTML = "Computer chose rock!";
+            document.getElementById("mesaj").innerHTML = 'You win! Paper beats rock!';
+            console.log("You win! Paper beats rock!");
             i++;
         }
     }
@@ -57,16 +69,22 @@ function singleRound(choice1,choice2){
     {
         if(choice2=='scissors')
         {
-            alert("It's a tie!");
+            document.getElementById("alegere").innerHTML = "Computer chose scissors!";
+            document.getElementById("mesaj").innerHTML = "It's a tie!";
+            console.log("It's a tie!");
         }
         else if(choice2=='rock')
         {
-            alert('You lost! Rock beats scissors!');
+            document.getElementById("alegere").innerHTML = "Computer chose rock!";
+            document.getElementById("mesaj").innerHTML = 'You lost! Rock beats scissors!';
+            console.log('You lost! Rock beats scissors!');
             j++;
            
         }
         else {
-            alert("You win! Scissors beats paper!");
+            document.getElementById("alegere").innerHTML = "Computer chose paper!";
+            document.getElementById("mesaj").innerHTML = "You win! Scissors beats paper!";
+            console.log("You win! Scissors beats paper!");
             i++;
           
         }
@@ -74,17 +92,22 @@ function singleRound(choice1,choice2){
 
 }
 
-function game(){
-    let computerChoice;
-    let playerChoice;
-    for(let z=0;z<5;z++){
-        computerChoice=getComputerChoice();
-        playerChoice=prompt("What's your choice?");
-        let result= playerChoice.toLowerCase();    
-        singleRound(result,computerChoice);
-    }
- 
-}
 
-game();
-alert(i+ ' - ' + j);
+function choose(choice){
+    console.log(choice);
+    let playerChoice=choice;
+    let computerChoice=getComputerChoice();
+    singleRound(playerChoice,computerChoice);
+    document.getElementById("score").innerHTML ='YOU  ' + i + ' - ' + j+'  BOT';
+    if(i<5 || j<5)
+    {
+        document.getElementById("final").innerHTML = "";
+        document.getElementById("final2").innerHTML = "";
+    }
+    if(j==5 || i==5){
+        document.getElementById("final").innerHTML = "The game has been finished!";
+        document.getElementById("final2").innerHTML = "To start another game, simply press one of the three buttons :)";
+        i=0;
+        j=0;
+    }
+}
